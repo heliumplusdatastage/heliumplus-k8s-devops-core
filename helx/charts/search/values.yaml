@@ -61,9 +61,9 @@ airflow:
 
     # Resource config for all task runner pods.
     kubernetesPodTemplate:
-      resources: {}
-        # requests:
-          # memory: 1Gi
+      resources:
+         requests:
+           memory: 8Gi
 
   externalRedis:
     host: helx-redis-master
@@ -275,13 +275,6 @@ persistence:
 
 redis:
   enabled: true
-  dumpUri: "https://stars.renci.org/var/kgx_data/roger_graph.rdb"
-  configmap: |-
-    # Disables appendonly , this instance is readonly. And needs to be
-    # seeded from RDB files if needed.
-    appendonly no
-    # Disable RDB persistence, AOF persistence already enabled.
-    save ""
   persistence:
     existingClaim: "redis-data"
   usePassword: true
