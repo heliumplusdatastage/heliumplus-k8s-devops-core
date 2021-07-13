@@ -208,14 +208,6 @@ NOTE: Enable Ambassador/Nginx in development mode, if Appstore is running on loc
 helm install release-name $HELXPLATFORM_HOME/devops/helx --values basic-values.yaml --namespace your-k8s-namespace
 ```
 
-### TLS/SSL
-
-The helm charts will not create the TLS secrets for nginx (`nginxTLSSecret`), meaning the nginx pod will crashloop until that secret is created. You will either need to create a self-signed certificate, or have an administrator create one for you. To create the secret from an existing certificate:
-
-```
-kubectl create secret tls -n <your-namespace> <your-namespace>.blackbalsam-cluster.edc.renci.org-tls-secret --cert=tls.crt --key=tls.key
-```
-
 ### Deleting the chart.
 ```
 helm delete release-name --namespace your-k8s-namespace

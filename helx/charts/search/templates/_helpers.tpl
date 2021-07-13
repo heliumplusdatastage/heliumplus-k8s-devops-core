@@ -8,9 +8,9 @@ Expand the name of the chart.
 {{/*
 Renders a value that contains template.
 Usage:
-{{ include "redis.tplValue" ( dict "value" .Values.path.to.the.Value "context" $) }}
+{{ include "search.redis.tplValue" ( dict "value" .Values.path.to.the.Value "context" $) }}
 */}}
-{{- define "redis.tplValue" -}}
+{{- define "search.redis.tplValue" -}}
     {{- if typeIs "string" .value }}
         {{- tpl .value .context }}
     {{- else }}
