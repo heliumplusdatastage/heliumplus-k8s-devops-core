@@ -1,8 +1,16 @@
 # nginx
 
-![Version: 0.2.5](https://img.shields.io/badge/Version-0.2.5-informational?style=flat-square) ![AppVersion: 1.0.13](https://img.shields.io/badge/AppVersion-1.0.13-informational?style=flat-square)
-
 A Helm chart for Kubernetes
+
+![Version: 0.2.6](https://img.shields.io/badge/Version-0.2.6-informational?style=flat-square) ![AppVersion: 1.0.13](https://img.shields.io/badge/AppVersion-1.0.13-informational?style=flat-square)
+
+### TLS/SSL
+
+The helm charts will not create the TLS secrets for nginx (`nginxTLSSecret`), by default. If you want to enable TLS, you will either need to create a self-signed certificate, or have an administrator create one for you. To create the secret from an existing certificate:
+
+```
+kubectl create secret tls my.domain.org-tls-secret --cert=tls.crt --key=tls.key
+```
 
 ## Values
 

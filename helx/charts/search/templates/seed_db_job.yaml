@@ -30,5 +30,5 @@ spec:
       volumes:
         - name: "redis-data"
           persistentVolumeClaim:
-            claimName: {{ include "redis.tplValue" (dict "value" .Values.redis.persistence.existingClaim "context" $) }}
+            claimName: {{ include "search.redis.tplValue" (dict "value" .Values.redis.persistence.existingClaim "context" $) }}
 {{- end }}

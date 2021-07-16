@@ -1,0 +1,17 @@
+{{ template "chart.header" . }}
+{{ template "chart.description" . }}
+
+{{ template "chart.versionBadge" .  }}{{ template "chart.typeBadge" .  }}{{ template "chart.appVersionBadge" .  }}
+
+### TLS/SSL
+
+The helm charts will not create the TLS secrets for nginx (`nginxTLSSecret`), by default. If you want to enable TLS, you will either need to create a self-signed certificate, or have an administrator create one for you. To create the secret from an existing certificate:
+
+```
+kubectl create secret tls my.domain.org-tls-secret --cert=tls.crt --key=tls.key
+```
+
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}

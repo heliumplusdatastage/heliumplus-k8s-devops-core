@@ -207,6 +207,7 @@ NOTE: Enable Ambassador/Nginx in development mode, if Appstore is running on loc
 ```
 helm install release-name $HELXPLATFORM_HOME/devops/helx --values basic-values.yaml --namespace your-k8s-namespace
 ```
+
 ### Deleting the chart.
 ```
 helm delete release-name --namespace your-k8s-namespace
